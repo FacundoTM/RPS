@@ -1,26 +1,38 @@
-function play(computerPlay, playerSelection) {
+
+function computerPlay() {
+    x = Math.floor(Math.random() * 3);
+    if(x === 0) { return "rock"; } else if (x === 1) { return "paper"; } else { return "scissors"; }
+}
+
+let computerScore = 0;
+let playerScore = 0;
+
+function play(computerSelection, playerSelection) {
     
-    for (let i = 0; i < 5; i++) {
-      
-    function computerPlay() {
-        x = Math.floor(Math.random() * 3);
-        if(x === 0) { return "piedra"; } else if (x === 1) { return "papel"; } else { return "tijera"; }
+    for (let i = 0; i < 50; i++) {
+
+    playerSelection = prompt("Rock, paper or scissors?");
+    computerSelection = computerPlay();
+
+    if(computerSelection == playerSelection) { console.log("Its a tie!"); }
+    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors") { console.log("PC Wins!"); computerScore++; }
+    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") { console.log("Player wins!"); playerScore++;}
+    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") { console.log("Player wins!"); playerScore++;}
+    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock") { console.log("PC Wins!"); computerScore++;}
+    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") { console.log("Player wins!"); playerScore++;}
+    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper") { console.log("PC Wins!"); computerScore++;}
+    else { console.log("\nMmm... you pick a bad weapon!"); }
+
+    if (computerScore >= 5) {
+        console.log("\nEnd of the game! PC Wins!");
+        break;
+    } else if(playerScore >= 5) {
+        console.log("\nEnd of the game! Player wins!");
+        playerScore = 0; computerScore = 0;
+        break;
     }
 
-    playerSelection = prompt("Piedra papel o tijera?").toLowerCase();
-    x = computerPlay();
-
-    if(x == playerSelection) {
-        console.log("Empate");
-    }
-    else if (x == "piedra" && playerSelection == "tijera") { console.log("Gana la PC"); }
-    else if (x == "piedra" && playerSelection == "papel") { console.log("Gana el jugador"); }
-    else if (x == "papel" && playerSelection == "tijera") { console.log("Gana el jugador"); }
-    else if (x == "papel" && playerSelection == "piedra") { console.log("Gana la PC"); }
-    else if (x == "tijera" && playerSelection == "piedra") { console.log("Gana el jugador"); }
-    else if (x == "tijera" && playerSelection == "papel") { console.log("Gana la PC"); }
-    else { console.log("Mmm... escribiste mal tu mano!"); }
-
-    console.log("PC: " + x + "| Jugador: " + playerSelection);
+    console.log("\nPC: " + computerSelection + " | Player: " + playerSelection);
     }
 }
+
