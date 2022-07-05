@@ -21,6 +21,6 @@ function play(computerPlay, playerSelection) {
     else if (x == "tijera" && playerSelection == "papel") { console.log("Gana la PC"); }
     else { console.log("Mmm... escribiste mal tu mano!"); }
 
-    console.log("PC: " + x + "Jugador: " + playerSelection);
+    console.log("PC: " + x + "| Jugador: " + playerSelection);
     }
 }
