@@ -6,33 +6,71 @@ function computerPlay() {
 
 let computerScore = 0;
 let playerScore = 0;
+let r = document.getElementById('result');
+let c = document.getElementById('choice');
 
-function play(computerSelection, playerSelection) {
-    
-    for (let i = 0; i < 50; i++) {
+function check(){
 
-    playerSelection = prompt("Rock, paper or scissors?");
-    computerSelection = computerPlay();
-
-    if(computerSelection == playerSelection) { document.write("Its a tie!"); }
-    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors") { document.write("PC Wins!"); computerScore++; }
-    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") { document.write("Player wins!"); playerScore++;}
-    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") { document.write("Player wins!"); playerScore++;}
-    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock") { document.write("PC Wins!"); computerScore++;}
-    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") { document.write("Player wins!"); playerScore++;}
-    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper") { document.write("PC Wins!"); computerScore++;}
-    else { document.write("\nMmm... you pick a bad weapon!"); }
-
-    if (computerScore >= 5) {
-        document.write("\nEnd of the game! PC Wins!");
-        break;
-    } else if(playerScore >= 5) {
-        document.write("\nEnd of the game! Player wins!");
-        playerScore = 0; computerScore = 0;
-        break;
-    }
-
-    document.write("\nPC: " + computerSelection + " | Player: " + playerSelection);
+    if (playerScore >= 5) {
+        c.innerHTML = "<img src='./player.png'>"
+        r.innerHTML = `<h1> <strong>END!!</strong> player wins!! <br></h1> <button style="width: 100px;margin: 0 auto;" onclick = "location.reload();">Restart</button> `;
+        playerScore = computerScore = 0;
+    } else if (computerScore >= 5) {
+        c.innerHTML = "<img src='./pc.webp'>";
+        r.innerHTML = `<h1> <strong>END!!</strong> computer wins!!<br></h1> <button style="width: 100px;margin: 0 auto;" onclick = "location.reload();">Restart</button>`;
+        playerScore = computerScore = 0;
     }
 }
 
+function rock() {
+    switch(computerPlay()) {
+        case 'rock':
+            r.innerHTML = 'tie';
+            break;
+        case 'paper':
+            r.innerHTML = 'pc wins';
+            computerScore++;
+            break;
+        case 'scissors':
+            r.innerHTML = 'player win';
+            playerScore++;
+            break;
+    }
+    check();
+}
+
+
+function paper() {
+    switch(computerPlay()) {
+        case 'rock':
+            r.innerHTML ='player wins';
+            break;
+        case 'paper':
+            r.innerHTML ='tie';
+            computerScore++;
+            break;
+        case 'scissors':
+            r.innerHTML ='pc win';
+            playerScore++;
+            break;
+    }
+    check();
+}
+
+
+function scissors() {
+    switch(computerPlay()) {
+        case 'rock':
+            r.innerHTML ='pc wins';
+            break;
+        case 'paper':
+            r.innerHTML ='player wins';
+            computerScore++;
+            break;
+        case 'scissors':
+            r.innerHTML ='tie';
+            playerScore++;
+            break;
+    }
+    check();
+}
