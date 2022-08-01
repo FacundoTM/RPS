@@ -14,25 +14,25 @@ function play(computerSelection, playerSelection) {
     playerSelection = prompt("Rock, paper or scissors?");
     computerSelection = computerPlay();
 
-    if(computerSelection == playerSelection) { console.log("Its a tie!"); }
-    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors") { console.log("PC Wins!"); computerScore++; }
-    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") { console.log("Player wins!"); playerScore++;}
-    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") { console.log("Player wins!"); playerScore++;}
-    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock") { console.log("PC Wins!"); computerScore++;}
-    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") { console.log("Player wins!"); playerScore++;}
-    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper") { console.log("PC Wins!"); computerScore++;}
-    else { console.log("\nMmm... you pick a bad weapon!"); }
+    if(computerSelection == playerSelection) { document.write("Its a tie!"); }
+    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors") { document.write("PC Wins!"); computerScore++; }
+    else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") { document.write("Player wins!"); playerScore++;}
+    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") { document.write("Player wins!"); playerScore++;}
+    else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock") { document.write("PC Wins!"); computerScore++;}
+    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") { document.write("Player wins!"); playerScore++;}
+    else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper") { document.write("PC Wins!"); computerScore++;}
+    else { document.write("\nMmm... you pick a bad weapon!"); }
 
     if (computerScore >= 5) {
-        console.log("\nEnd of the game! PC Wins!");
+        document.write("\nEnd of the game! PC Wins!");
         break;
     } else if(playerScore >= 5) {
-        console.log("\nEnd of the game! Player wins!");
+        document.write("\nEnd of the game! Player wins!");
         playerScore = 0; computerScore = 0;
         break;
     }
 
-    console.log("\nPC: " + computerSelection + " | Player: " + playerSelection);
+    document.write("\nPC: " + computerSelection + " | Player: " + playerSelection);
     }
 }
 
