@@ -28,12 +28,12 @@ function rock() {
             r.innerHTML = 'tie';
             break;
         case 'paper':
-            r.innerHTML = 'pc wins';
             computerScore++;
+            r.innerHTML = 'pc wins';
             break;
         case 'scissors':
-            r.innerHTML = 'player win';
             playerScore++;
+            r.innerHTML = 'player win';
             break;
     }
     check();
@@ -44,14 +44,14 @@ function paper() {
     switch(computerPlay()) {
         case 'rock':
             r.innerHTML ='player wins';
+            playerScore++;
             break;
         case 'paper':
             r.innerHTML ='tie';
-            computerScore++;
             break;
         case 'scissors':
             r.innerHTML ='pc win';
-            playerScore++;
+            computerScore++;
             break;
     }
     check();
@@ -62,14 +62,14 @@ function scissors() {
     switch(computerPlay()) {
         case 'rock':
             r.innerHTML ='pc wins';
+            computerScore++;
             break;
         case 'paper':
             r.innerHTML ='player wins';
-            computerScore++;
+            playerScore++;
             break;
         case 'scissors':
             r.innerHTML ='tie';
-            playerScore++;
             break;
     }
     check();
