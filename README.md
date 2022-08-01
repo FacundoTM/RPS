@@ -1,5 +1,7 @@
 # RPS
 
-Classic game, better of 5 won. Only playable from the console for now.
+Classic game, better of 5 won.
 
 Rock, Paper, Scissors
+
+See live demo here: <a href="https://facundotm.github.io/RPS/">let me in!</a>
