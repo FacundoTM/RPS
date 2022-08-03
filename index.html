@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <title>Rock, Paper or Scissors!</title>
 </head>
-<body style="text-align: center;display: flex;flex-flow: column;height: 1080px;justify-content: center;">
-    <h1>Enjoy it!</h1>
+<body style="color:#302e2f;font-family: Helvetica;background: rgb(255 234 0);text-align: center;display: flex;flex-flow: column;height: 1080px;justify-content: center;">
+    <h1 style="font-size:48px;">ROCK   PAPER   SCISSORS</h1>
+    
     <div id="choice">
-    <button style="width: 100px;margin: 0 auto;" onclick = "rock()">Rock</button>
-    <button style="width: 100px;margin: 0 auto;" onclick = "paper()">Paper</button>
-    <button style="width: 100px;margin: 0 auto;" onclick = "scissors()">Scissors</button>
+        <h3>BETTER OF FIVE!</h3>
+    <button style="border:none;background: url(./piedra.png); margin: 0 auto; width: 248px;height: 270px;" onclick = "rock()"></button>
+    <button style="border:none;background: url(./papel.png); margin: 0 auto; width: 248px;height: 270px;" onclick = "paper()"></button>
+    <button style="border:none;background: url(./tijera.png); margin: 0 auto; width: 248px;height: 270px;" onclick = "scissors()"></button>
     </div>
 
     <br>
-    <div id="result"></div>
+    <h2 style="font-size:32px;text-transform: uppercase;"><div id="result"></div></h2>
     <script type="text/javascript" src="./rps.js"></script>
 </body>
 </html>
